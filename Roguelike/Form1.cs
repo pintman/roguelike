@@ -71,7 +71,7 @@ namespace Roguelike
         private void SpielfeldZeichnen()
         {
             // Variante 2: Erst in einen String schreiben, 
-            // diesen dann komplett setzen (Buffering)
+            // diesen dann komplett setzen (Double Buffering)
 
             string sSpielfeld = "\n";
             rtbSpielfeld.Clear();

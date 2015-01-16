@@ -1,6 +1,6 @@
 roguelike
 ===========
-Ein Roguelike in C#, das als Schulprojekt für den Einstieg in die Programmierung dienen kann/soll. Es werden Arrays und Dateioperationen behandelt. Vertiefende Themen können aus dem Bereich der künstlichen Intelligenz oder der Algorithmik kommen.
+Ein Roguelike in C#, das als Schulprojekt für den Einstieg in die Programmierung dienen kann/soll. Es werden Arrays und Dateioperationen behandelt. Vertiefende Themen können aus den Bereichen der Computergrafik ([Double Buffering](https://de.wikipedia.org/wiki/Doppelpufferung), der künstlichen Intelligenz (Computerspieler) oder der Algorithmik (Wegfindung, Field Of View)) kommen.
 
 Weiterführende Links
 --------------------

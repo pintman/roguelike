@@ -7,6 +7,14 @@ Buffering](https://de.wikipedia.org/wiki/Doppelpufferung), der künstlichen
 Intelligenz (Computerspieler) oder der Algorithmik (Wegfindung, Field Of View))
 kommen.
 
+Einstieg
+--------
+
+Um eine Vorstellung von der Funktionsweise eines Roqugelike zu erhalten, bietet
+es sich an, ein Spiel zu wagen und es einfach auszuprobieren.
+[Brogue](https://sites.google.com/site/broguegame/) ist ein schönes Beispiel,
+das es für alle gängigen Plattformen gibt.
+
 Fachliche Konzepte
 ------------------
 

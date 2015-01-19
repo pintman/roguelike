@@ -20,6 +20,14 @@ namespace Roguelike
         int iSpielerX;
         int iSpielerY;
 
+        // Damit die Bilder geladen werden können:
+        // 1. Bild in Ordner Bilder
+        // 2. Projektmappe hinzufügen über "Vorhandenes Element"
+        // 3. Eigenschaften des Bilder: "Kopieren wenn neuer"
+        Image imHeld;
+        Image imBoden;
+        Image imWand;
+
         public Form1()
         {
             InitializeComponent();
@@ -32,6 +40,10 @@ namespace Roguelike
             rtbSpielfeld.Font = new Font("Courier New", 12);
             rtbSpielfeld.BackColor = Color.Black;
             rtbSpielfeld.ForeColor = Color.Green;
+
+            imHeld = Image.FromFile("Bilder/Held.png");
+            imBoden = Image.FromFile("Bilder/Boden.png");
+            imWand = Image.FromFile("Bilder/Wand.png");
 
             SpielfeldInitialisieren();
             SpielfeldZeichnen();
@@ -70,6 +82,11 @@ namespace Roguelike
         }
         private void SpielfeldZeichnen()
         {
+            SpielfeldInTextboxZeichnen();
+            SpielfeldInPictureboxZeichnen();
+        }
+        private void SpielfeldInTextboxZeichnen()
+        {
             // Variante 2: Erst in einen String schreiben, 
             // diesen dann komplett setzen (Double Buffering)
 
@@ -85,6 +102,41 @@ namespace Roguelike
                 sSpielfeld += "\n";
             }
             rtbSpielfeld.Text = sSpielfeld;
+        }
+        private void SpielfeldInPictureboxZeichnen()
+        {
+            // Das Feld soll neu gezeichnet werden - über das Paint-Event.
+            pbSpielfeld.Invalidate();
+        }
+
+        private void pbSpielfeld_Paint(object sender, PaintEventArgs e)
+        {
+            for (int j = 0; j < hoehe; j++)
+            {
+                for (int i = 0; i < breite; i++)
+                {
+                    char c = aSpielfeld[i, j];
+                    Image im = BildBestimmen(c);
+                    e.Graphics.DrawImage(im, i*im.Width, j * im.Height);
+                }
+            }
+        }
+
+        private Image BildBestimmen(char cZeichen)
+        {
+            if (cZeichen == '@')
+            {
+                return imHeld;
+            }
+            if (cZeichen == '.')
+            {
+                return imBoden;
+            }
+            if (cZeichen == '#')
+            {
+                return imWand;
+            }
+            return null;
         }
 
         private void rtbSpielfeld_KeyPress1(object sender, KeyPressEventArgs e)

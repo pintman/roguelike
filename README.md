@@ -1,5 +1,6 @@
 roguelike
-===========
+=========
+
 Ein Roguelike in C#, das als Schulprojekt für den Einstieg in die Programmierung
 dienen kann/soll. Es werden Arrays und Dateioperationen behandelt. Vertiefende
 Themen können aus den Bereichen der Computergrafik ([Double
@@ -43,6 +44,14 @@ Stelle. Schließlich findet man
 [hier](http://www.roguebasin.com/index.php?title=Dynamically_Sized_Maze) eine
 Sammlung weiterer Verfahren. 
 
+### Grafische Programmierung
+
+Neben einer Darstellung in Textform kann auch eine grafische Ausgabe existieren.
+Beide Formen können nebeneinander bestehen, wodurch eine Trennung von
+Anwendungslogik und Darstellung erforderlich wird, wie es im MVC-Pattern
+beschrieben wird.
+
+
 Weiterführende Links
 --------------------
 
@@ -51,3 +60,13 @@ Weiterführende Links
 vielen Informationen.
 * [Video: Roguelikes, and building one (ab Minute
 17)](http://media.ccc.de/browse/congress/2014/31c3_-_6579_-_en_-_saal_g_-_201412291245_-_lightning_talks_day_3_-_theresa.html)
+* [Finding graphical tiles](http://www.roguebasin.com/index.php?title=Finding_graphical_tiles)
+
+
+Quellen
+-------
+
+Die in diesem Projekt verwendeten Grafiken entstammen dem [Tileset von
+DawnBringer](http://opengameart.org/content/16x16-dawnhack-roguelike-tileset).
+
+

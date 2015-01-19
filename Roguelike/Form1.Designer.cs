@@ -32,17 +32,18 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.dateiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.spielfeldLadenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pbSpielfeld = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSpielfeld)).BeginInit();
             this.SuspendLayout();
             // 
             // rtbSpielfeld
             // 
-            this.rtbSpielfeld.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.rtbSpielfeld.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.rtbSpielfeld.Location = new System.Drawing.Point(13, 27);
             this.rtbSpielfeld.Name = "rtbSpielfeld";
-            this.rtbSpielfeld.Size = new System.Drawing.Size(503, 396);
+            this.rtbSpielfeld.Size = new System.Drawing.Size(242, 401);
             this.rtbSpielfeld.TabIndex = 0;
             this.rtbSpielfeld.Text = "";
             this.rtbSpielfeld.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.rtbSpielfeld_KeyPress);
@@ -53,7 +54,7 @@
             this.dateiToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(528, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(541, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -68,15 +69,28 @@
             // spielfeldLadenToolStripMenuItem
             // 
             this.spielfeldLadenToolStripMenuItem.Name = "spielfeldLadenToolStripMenuItem";
-            this.spielfeldLadenToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.spielfeldLadenToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.spielfeldLadenToolStripMenuItem.Text = "Spielfeld laden";
             this.spielfeldLadenToolStripMenuItem.Click += new System.EventHandler(this.spielfeldLadenToolStripMenuItem_Click);
+            // 
+            // pbSpielfeld
+            // 
+            this.pbSpielfeld.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbSpielfeld.Location = new System.Drawing.Point(257, 27);
+            this.pbSpielfeld.Name = "pbSpielfeld";
+            this.pbSpielfeld.Size = new System.Drawing.Size(269, 394);
+            this.pbSpielfeld.TabIndex = 2;
+            this.pbSpielfeld.TabStop = false;
+            this.pbSpielfeld.Paint += new System.Windows.Forms.PaintEventHandler(this.pbSpielfeld_Paint);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(528, 435);
+            this.ClientSize = new System.Drawing.Size(541, 440);
+            this.Controls.Add(this.pbSpielfeld);
             this.Controls.Add(this.rtbSpielfeld);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -84,6 +98,7 @@
             this.Text = "Form1";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSpielfeld)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -95,6 +110,7 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem dateiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem spielfeldLadenToolStripMenuItem;
+        private System.Windows.Forms.PictureBox pbSpielfeld;
     }
 }
 

@@ -33,6 +33,8 @@
             this.dateiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.spielfeldLadenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pbSpielfeld = new System.Windows.Forms.PictureBox();
+            this.opionenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.grafischeAnsichtAnzeigenverbergenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbSpielfeld)).BeginInit();
             this.SuspendLayout();
@@ -51,7 +53,8 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.dateiToolStripMenuItem});
+            this.dateiToolStripMenuItem,
+            this.opionenToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(541, 24);
@@ -85,6 +88,21 @@
             this.pbSpielfeld.TabStop = false;
             this.pbSpielfeld.Paint += new System.Windows.Forms.PaintEventHandler(this.pbSpielfeld_Paint);
             // 
+            // opionenToolStripMenuItem
+            // 
+            this.opionenToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.grafischeAnsichtAnzeigenverbergenToolStripMenuItem});
+            this.opionenToolStripMenuItem.Name = "opionenToolStripMenuItem";
+            this.opionenToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
+            this.opionenToolStripMenuItem.Text = "Opionen";
+            // 
+            // grafischeAnsichtAnzeigenverbergenToolStripMenuItem
+            // 
+            this.grafischeAnsichtAnzeigenverbergenToolStripMenuItem.Name = "grafischeAnsichtAnzeigenverbergenToolStripMenuItem";
+            this.grafischeAnsichtAnzeigenverbergenToolStripMenuItem.Size = new System.Drawing.Size(274, 22);
+            this.grafischeAnsichtAnzeigenverbergenToolStripMenuItem.Text = "Grafische Ansicht anzeigen/verbergen";
+            this.grafischeAnsichtAnzeigenverbergenToolStripMenuItem.Click += new System.EventHandler(this.grafischeAnsichtAnzeigenverbergenToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -111,6 +129,8 @@
         private System.Windows.Forms.ToolStripMenuItem dateiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem spielfeldLadenToolStripMenuItem;
         private System.Windows.Forms.PictureBox pbSpielfeld;
+        private System.Windows.Forms.ToolStripMenuItem opionenToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem grafischeAnsichtAnzeigenverbergenToolStripMenuItem;
     }
 }
 

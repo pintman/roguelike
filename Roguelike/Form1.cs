@@ -240,5 +240,10 @@ namespace Roguelike
                 SpielfeldZeichnen();
             }
         }
+
+        private void grafischeAnsichtAnzeigenverbergenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            pbSpielfeld.Visible = !pbSpielfeld.Visible;
+        }
     }
 }

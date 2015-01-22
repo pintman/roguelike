@@ -34,10 +34,10 @@
             this.spielfeldLadenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.opionenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.grafischeAnsichtAnzeigenverbergenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.statusleisteEinblendenausblendenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pbSpielfeld = new System.Windows.Forms.PictureBox();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblStatusleiste = new System.Windows.Forms.ToolStripStatusLabel();
-            this.statusleisteEinblendenausblendenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbSpielfeld)).BeginInit();
             this.statusStrip1.SuspendLayout();
@@ -86,8 +86,8 @@
             this.grafischeAnsichtAnzeigenverbergenToolStripMenuItem,
             this.statusleisteEinblendenausblendenToolStripMenuItem});
             this.opionenToolStripMenuItem.Name = "opionenToolStripMenuItem";
-            this.opionenToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
-            this.opionenToolStripMenuItem.Text = "Opionen";
+            this.opionenToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
+            this.opionenToolStripMenuItem.Text = "Optionen";
             // 
             // grafischeAnsichtAnzeigenverbergenToolStripMenuItem
             // 
@@ -95,6 +95,13 @@
             this.grafischeAnsichtAnzeigenverbergenToolStripMenuItem.Size = new System.Drawing.Size(274, 22);
             this.grafischeAnsichtAnzeigenverbergenToolStripMenuItem.Text = "Grafische Ansicht anzeigen/verbergen";
             this.grafischeAnsichtAnzeigenverbergenToolStripMenuItem.Click += new System.EventHandler(this.grafischeAnsichtAnzeigenverbergenToolStripMenuItem_Click);
+            // 
+            // statusleisteEinblendenausblendenToolStripMenuItem
+            // 
+            this.statusleisteEinblendenausblendenToolStripMenuItem.Name = "statusleisteEinblendenausblendenToolStripMenuItem";
+            this.statusleisteEinblendenausblendenToolStripMenuItem.Size = new System.Drawing.Size(274, 22);
+            this.statusleisteEinblendenausblendenToolStripMenuItem.Text = "Statusleiste einblenden/ausblenden";
+            this.statusleisteEinblendenausblendenToolStripMenuItem.Click += new System.EventHandler(this.statusleisteEinblendenausblendenToolStripMenuItem_Click);
             // 
             // pbSpielfeld
             // 
@@ -124,13 +131,6 @@
             this.lblStatusleiste.Size = new System.Drawing.Size(79, 17);
             this.lblStatusleiste.Text = "lblStatusleiste";
             // 
-            // statusleisteEinblendenausblendenToolStripMenuItem
-            // 
-            this.statusleisteEinblendenausblendenToolStripMenuItem.Name = "statusleisteEinblendenausblendenToolStripMenuItem";
-            this.statusleisteEinblendenausblendenToolStripMenuItem.Size = new System.Drawing.Size(274, 22);
-            this.statusleisteEinblendenausblendenToolStripMenuItem.Text = "Statusleiste einblenden/ausblenden";
-            this.statusleisteEinblendenausblendenToolStripMenuItem.Click += new System.EventHandler(this.statusleisteEinblendenausblendenToolStripMenuItem_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -142,7 +142,7 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Roguelike in C#";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbSpielfeld)).EndInit();

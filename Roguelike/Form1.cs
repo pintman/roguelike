@@ -22,11 +22,15 @@ namespace Roguelike
         int iAnzahlAepfel;
         int iSchrittzahl;
 
+        Point pGegnerPos; // x/y-Koordinate des Gegners.
+        Random randZufall;
+
         // Damit die Bilder geladen werden können:
         // 1. Bild in Ordner Bilder
         // 2. Projektmappe hinzufügen über "Vorhandenes Element"
         // 3. Eigenschaften des Bilder: "Kopieren wenn neuer"
         Image imHeld;
+        Image imGegner;
         Image imBoden;
         Image imWand;
         Image imApfel;
@@ -42,6 +46,9 @@ namespace Roguelike
             iAnzahlAepfel = 0;
             iSchrittzahl = 0;
 
+            pGegnerPos = new Point(-1, -1);
+            randZufall = new Random();
+
             rtbSpielfeld.Font = new Font("Courier New", 12);
             rtbSpielfeld.BackColor = Color.Black;
             rtbSpielfeld.ForeColor = Color.Green;
@@ -50,6 +57,7 @@ namespace Roguelike
             imBoden = Image.FromFile("Bilder/Boden.png");
             imWand = Image.FromFile("Bilder/Wand.png");
             imApfel = Image.FromFile("Bilder/Apfel.png");
+            imGegner = Image.FromFile("Bilder/Gegner.png");
 
             SpielfeldInitialisieren();
             SpielfeldZeichnen();
@@ -148,6 +156,10 @@ namespace Roguelike
             {
                 return imApfel;
             }
+            if (cZeichen == 'G')
+            {
+                return imGegner;
+            }
             return null;
         }
 
@@ -204,7 +216,7 @@ namespace Roguelike
 
             SpielfeldZeichnen();
         }
-        private void rtbSpielfeld_KeyPress(object sender, KeyPressEventArgs e)
+        private void rtbSpielfeld_KeyPress3(object sender, KeyPressEventArgs e)
         {
             // Variante 3: Kollisionsprüfung, Schritte zählen und Apfel einsammeln.
 
@@ -237,6 +249,72 @@ namespace Roguelike
             SpielfeldZeichnen();
             iSchrittzahl++;
         }
+        private void rtbSpielfeld_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Variante 3: Kollisionsprüfung, Schritte zählen, Apfel einsammeln und Gegner bewegen
+
+            aSpielfeld[iSpielerX, iSpielerY] = '.';
+
+            if (e.KeyChar == 'a' && feldFrei(iSpielerX - 1, iSpielerY))
+            {
+                iSpielerX--;
+            }
+            if (e.KeyChar == 'd' && feldFrei(iSpielerX + 1, iSpielerY))
+            {
+                iSpielerX++;
+            }
+            if (e.KeyChar == 'w' && feldFrei(iSpielerX, iSpielerY - 1))
+            {
+                iSpielerY--;
+            }
+            if (e.KeyChar == 's' && feldFrei(iSpielerX, iSpielerY + 1))
+            {
+                iSpielerY++;
+            }
+
+            if (aSpielfeld[iSpielerX, iSpielerY] == '*')
+            {
+                iAnzahlAepfel++;
+            }
+
+            aSpielfeld[iSpielerX, iSpielerY] = '@';
+            iSchrittzahl++;
+
+            if(gegnerVorhanden())
+                gegnerBewegen();
+
+            SpielfeldZeichnen();
+        }
+
+        private bool gegnerVorhanden()
+        {
+            return pGegnerPos.X >= 0 && pGegnerPos.Y >= 0;
+        }
+
+        void gegnerBewegen()
+        {
+            aSpielfeld[pGegnerPos.X, pGegnerPos.Y] = '.';
+            int iRichtung = randZufall.Next(0, 3);
+
+            if (iRichtung == 0 && feldFrei(pGegnerPos.X - 1, pGegnerPos.Y))
+            {
+                pGegnerPos.X--;
+            }
+            if (iRichtung == 1 && feldFrei(pGegnerPos.X + 1, pGegnerPos.Y))
+            {
+                pGegnerPos.X++;
+            }
+            if (iRichtung == 2 && feldFrei(pGegnerPos.X, pGegnerPos.Y - 1))
+            {
+                pGegnerPos.Y--;
+            }
+            if (iRichtung == 3 && feldFrei(pGegnerPos.X, pGegnerPos.Y + 1))
+            {
+                pGegnerPos.Y++;
+            }
+            aSpielfeld[pGegnerPos.X, pGegnerPos.Y] = 'G';
+        }
+
         /// <summary>
         /// Prüft, ob das Feld frei ist und der Spieler darauf ziehen kann.
         /// </summary>
@@ -260,6 +338,9 @@ namespace Roguelike
             int iZeile = 0;
             if(result == DialogResult.OK)
             {
+                pGegnerPos.X = -1;
+                pGegnerPos.Y = -1;
+
                 StreamReader reader = new StreamReader(ofdSpielfeldLaden.FileName);
                 while (!reader.EndOfStream)
                 {
@@ -272,11 +353,16 @@ namespace Roguelike
                     for (int i = 0; i < sZeile.Length; i++)
                     {
                         char c = sZeile[i];
-                        aSpielfeld[iZeile, i] = c;
+                        aSpielfeld[i, iZeile] = c;
                         if(c == '@')
                         {
                             iSpielerX = i;
                             iSpielerY = iZeile;
+                        }
+                        if (c == 'G')
+                        {
+                            pGegnerPos.X = i;
+                            pGegnerPos.Y = iZeile;
                         }
                     }
 

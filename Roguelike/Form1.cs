@@ -73,7 +73,8 @@ namespace Roguelike
         }
         private void SpielfeldZeichnen1()
         {
-            // Variante 1: Nutzt AppendText. Das flackert jedoch. Daher wechsel zu
+            // Variante 1: Nutzt AppendText. Das flackert jedoch. 
+            // Daher in String schreiben und anschließend string in Textbox schreiben
 
             rtbSpielfeld.Clear();
             for (int j = 0; j < hoehe; j++)
@@ -90,7 +91,7 @@ namespace Roguelike
         {
             SpielfeldInTextboxZeichnen();
             SpielfeldInPictureboxZeichnen();
-            lblStatusleiste.Text = iAnzahlAepfel + " Äpfel " + iSchrittzahl + " Schritte";
+            lblStatusleiste.Text = iAnzahlAepfel + " Äpfel | " + iSchrittzahl + " Schritte";
         }
         private void SpielfeldInTextboxZeichnen()
         {

@@ -37,6 +37,7 @@
             this.pbSpielfeld = new System.Windows.Forms.PictureBox();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblStatusleiste = new System.Windows.Forms.ToolStripStatusLabel();
+            this.statusleisteEinblendenausblendenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbSpielfeld)).BeginInit();
             this.statusStrip1.SuspendLayout();
@@ -82,7 +83,8 @@
             // opionenToolStripMenuItem
             // 
             this.opionenToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.grafischeAnsichtAnzeigenverbergenToolStripMenuItem});
+            this.grafischeAnsichtAnzeigenverbergenToolStripMenuItem,
+            this.statusleisteEinblendenausblendenToolStripMenuItem});
             this.opionenToolStripMenuItem.Name = "opionenToolStripMenuItem";
             this.opionenToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
             this.opionenToolStripMenuItem.Text = "Opionen";
@@ -116,11 +118,18 @@
             this.statusStrip1.TabIndex = 3;
             this.statusStrip1.Text = "statusStrip1";
             // 
-            // toolStripStatusLabel1
+            // lblStatusleiste
             // 
-            this.lblStatusleiste.Name = "toolStripStatusLabel1";
+            this.lblStatusleiste.Name = "lblStatusleiste";
             this.lblStatusleiste.Size = new System.Drawing.Size(79, 17);
             this.lblStatusleiste.Text = "lblStatusleiste";
+            // 
+            // statusleisteEinblendenausblendenToolStripMenuItem
+            // 
+            this.statusleisteEinblendenausblendenToolStripMenuItem.Name = "statusleisteEinblendenausblendenToolStripMenuItem";
+            this.statusleisteEinblendenausblendenToolStripMenuItem.Size = new System.Drawing.Size(274, 22);
+            this.statusleisteEinblendenausblendenToolStripMenuItem.Text = "Statusleiste einblenden/ausblenden";
+            this.statusleisteEinblendenausblendenToolStripMenuItem.Click += new System.EventHandler(this.statusleisteEinblendenausblendenToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -155,6 +164,7 @@
         private System.Windows.Forms.ToolStripMenuItem grafischeAnsichtAnzeigenverbergenToolStripMenuItem;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel lblStatusleiste;
+        private System.Windows.Forms.ToolStripMenuItem statusleisteEinblendenausblendenToolStripMenuItem;
     }
 }
 

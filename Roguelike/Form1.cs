@@ -289,5 +289,10 @@ namespace Roguelike
         {
             pbSpielfeld.Visible = !pbSpielfeld.Visible;
         }
+
+        private void statusleisteEinblendenausblendenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            lblStatusleiste.Visible = !lblStatusleiste.Visible;
+        }
     }
 }

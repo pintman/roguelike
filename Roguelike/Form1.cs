@@ -20,6 +20,7 @@ namespace Roguelike
         int iSpielerX;
         int iSpielerY;
         int iAnzahlAepfel;
+        int iSchrittzahl;
 
         // Damit die Bilder geladen werden können:
         // 1. Bild in Ordner Bilder
@@ -39,6 +40,7 @@ namespace Roguelike
             iSpielerX = 5;
             iSpielerY = 5;
             iAnzahlAepfel = 0;
+            iSchrittzahl = 0;
 
             rtbSpielfeld.Font = new Font("Courier New", 12);
             rtbSpielfeld.BackColor = Color.Black;
@@ -88,7 +90,7 @@ namespace Roguelike
         {
             SpielfeldInTextboxZeichnen();
             SpielfeldInPictureboxZeichnen();
-            lblStatusleiste.Text = iAnzahlAepfel + " Äpfel";
+            lblStatusleiste.Text = iAnzahlAepfel + " Äpfel " + iSchrittzahl + " Schritte";
         }
         private void SpielfeldInTextboxZeichnen()
         {
@@ -203,7 +205,7 @@ namespace Roguelike
         }
         private void rtbSpielfeld_KeyPress(object sender, KeyPressEventArgs e)
         {
-            // Variante 3: Kollisionsprüfung und Apfel einsammeln.
+            // Variante 3: Kollisionsprüfung, Schritte zählen und Apfel einsammeln.
 
             aSpielfeld[iSpielerX, iSpielerY] = '.';
 
@@ -232,6 +234,7 @@ namespace Roguelike
             aSpielfeld[iSpielerX, iSpielerY] = '@';
 
             SpielfeldZeichnen();
+            iSchrittzahl++;
         }
         /// <summary>
         /// Prüft, ob das Feld frei ist und der Spieler darauf ziehen kann.

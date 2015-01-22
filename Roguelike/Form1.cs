@@ -19,6 +19,7 @@ namespace Roguelike
 
         int iSpielerX;
         int iSpielerY;
+        int iAnzahlAepfel;
 
         // Damit die Bilder geladen werden können:
         // 1. Bild in Ordner Bilder
@@ -27,6 +28,7 @@ namespace Roguelike
         Image imHeld;
         Image imBoden;
         Image imWand;
+        Image imApfel;
 
         public Form1()
         {
@@ -36,6 +38,7 @@ namespace Roguelike
             hoehe = 15;
             iSpielerX = 5;
             iSpielerY = 5;
+            iAnzahlAepfel = 0;
 
             rtbSpielfeld.Font = new Font("Courier New", 12);
             rtbSpielfeld.BackColor = Color.Black;
@@ -44,6 +47,7 @@ namespace Roguelike
             imHeld = Image.FromFile("Bilder/Held.png");
             imBoden = Image.FromFile("Bilder/Boden.png");
             imWand = Image.FromFile("Bilder/Wand.png");
+            imApfel = Image.FromFile("Bilder/Apfel.png");
 
             SpielfeldInitialisieren();
             SpielfeldZeichnen();
@@ -84,6 +88,7 @@ namespace Roguelike
         {
             SpielfeldInTextboxZeichnen();
             SpielfeldInPictureboxZeichnen();
+            lblStatusleiste.Text = iAnzahlAepfel + " Äpfel";
         }
         private void SpielfeldInTextboxZeichnen()
         {
@@ -136,6 +141,10 @@ namespace Roguelike
             {
                 return imWand;
             }
+            if(cZeichen == '*')
+            {
+                return imApfel;
+            }
             return null;
         }
 
@@ -165,7 +174,7 @@ namespace Roguelike
 
             SpielfeldZeichnen();
         }
-        private void rtbSpielfeld_KeyPress(object sender, KeyPressEventArgs e)
+        private void rtbSpielfeld_KeyPress2(object sender, KeyPressEventArgs e)
         {
             // Variante 2: Kollisionsprüfung. Nur laufen, wenn Zielfeld leer ist.
 
@@ -192,12 +201,44 @@ namespace Roguelike
 
             SpielfeldZeichnen();
         }
+        private void rtbSpielfeld_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Variante 3: Kollisionsprüfung und Apfel einsammeln.
+
+            aSpielfeld[iSpielerX, iSpielerY] = '.';
+
+            if (e.KeyChar == 'a' && feldFrei(iSpielerX - 1, iSpielerY))
+            {
+                iSpielerX--;
+            }
+            if (e.KeyChar == 'd' && feldFrei(iSpielerX + 1, iSpielerY))
+            {
+                iSpielerX++;
+            }
+            if (e.KeyChar == 'w' && feldFrei(iSpielerX, iSpielerY - 1))
+            {
+                iSpielerY--;
+            }
+            if (e.KeyChar == 's' && feldFrei(iSpielerX, iSpielerY + 1))
+            {
+                iSpielerY++;
+            }
+
+            if (aSpielfeld[iSpielerX, iSpielerY] == '*')
+            {
+                iAnzahlAepfel++;
+            }
+
+            aSpielfeld[iSpielerX, iSpielerY] = '@';
+
+            SpielfeldZeichnen();
+        }
         /// <summary>
         /// Prüft, ob das Feld frei ist und der Spieler darauf ziehen kann.
         /// </summary>
         private bool feldFrei(int x, int y)
         {
-            if(aSpielfeld[x,y] == '.')
+            if(aSpielfeld[x,y] == '.' || aSpielfeld[x,y] == '*')
             {
                 return true;
             }

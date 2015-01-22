@@ -32,11 +32,14 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.dateiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.spielfeldLadenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pbSpielfeld = new System.Windows.Forms.PictureBox();
             this.opionenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.grafischeAnsichtAnzeigenverbergenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pbSpielfeld = new System.Windows.Forms.PictureBox();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.lblStatusleiste = new System.Windows.Forms.ToolStripStatusLabel();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbSpielfeld)).BeginInit();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // rtbSpielfeld
@@ -45,7 +48,7 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.rtbSpielfeld.Location = new System.Drawing.Point(13, 27);
             this.rtbSpielfeld.Name = "rtbSpielfeld";
-            this.rtbSpielfeld.Size = new System.Drawing.Size(242, 401);
+            this.rtbSpielfeld.Size = new System.Drawing.Size(242, 388);
             this.rtbSpielfeld.TabIndex = 0;
             this.rtbSpielfeld.Text = "";
             this.rtbSpielfeld.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.rtbSpielfeld_KeyPress);
@@ -76,18 +79,6 @@
             this.spielfeldLadenToolStripMenuItem.Text = "Spielfeld laden";
             this.spielfeldLadenToolStripMenuItem.Click += new System.EventHandler(this.spielfeldLadenToolStripMenuItem_Click);
             // 
-            // pbSpielfeld
-            // 
-            this.pbSpielfeld.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pbSpielfeld.Location = new System.Drawing.Point(257, 27);
-            this.pbSpielfeld.Name = "pbSpielfeld";
-            this.pbSpielfeld.Size = new System.Drawing.Size(269, 394);
-            this.pbSpielfeld.TabIndex = 2;
-            this.pbSpielfeld.TabStop = false;
-            this.pbSpielfeld.Paint += new System.Windows.Forms.PaintEventHandler(this.pbSpielfeld_Paint);
-            // 
             // opionenToolStripMenuItem
             // 
             this.opionenToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -103,11 +94,40 @@
             this.grafischeAnsichtAnzeigenverbergenToolStripMenuItem.Text = "Grafische Ansicht anzeigen/verbergen";
             this.grafischeAnsichtAnzeigenverbergenToolStripMenuItem.Click += new System.EventHandler(this.grafischeAnsichtAnzeigenverbergenToolStripMenuItem_Click);
             // 
+            // pbSpielfeld
+            // 
+            this.pbSpielfeld.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbSpielfeld.Location = new System.Drawing.Point(257, 27);
+            this.pbSpielfeld.Name = "pbSpielfeld";
+            this.pbSpielfeld.Size = new System.Drawing.Size(269, 388);
+            this.pbSpielfeld.TabIndex = 2;
+            this.pbSpielfeld.TabStop = false;
+            this.pbSpielfeld.Paint += new System.Windows.Forms.PaintEventHandler(this.pbSpielfeld_Paint);
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.lblStatusleiste});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 418);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(541, 22);
+            this.statusStrip1.TabIndex = 3;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.lblStatusleiste.Name = "toolStripStatusLabel1";
+            this.lblStatusleiste.Size = new System.Drawing.Size(79, 17);
+            this.lblStatusleiste.Text = "lblStatusleiste";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(541, 440);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.pbSpielfeld);
             this.Controls.Add(this.rtbSpielfeld);
             this.Controls.Add(this.menuStrip1);
@@ -117,6 +137,8 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbSpielfeld)).EndInit();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -131,6 +153,8 @@
         private System.Windows.Forms.PictureBox pbSpielfeld;
         private System.Windows.Forms.ToolStripMenuItem opionenToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem grafischeAnsichtAnzeigenverbergenToolStripMenuItem;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel lblStatusleiste;
     }
 }
 
